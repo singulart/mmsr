@@ -150,8 +150,6 @@ def main():
             current_step += 1
             if current_step > total_iters:
                 break
-            #### update learning rate
-            model.update_learning_rate(current_step, warmup_iter=opt['train']['warmup_iter'])
 
             #### training
             model.feed_data(train_data)
@@ -291,6 +289,9 @@ def main():
                             tb_logger.add_scalar('psnr_avg', psnr_total_avg, current_step)
                             for k, v in psnr_rlt_avg.items():
                                 tb_logger.add_scalar(k, v, current_step)
+
+            # update learning rate - https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+            model.update_learning_rate(current_step, warmup_iter=opt['train']['warmup_iter'])
 
             #### save models and training states
             if current_step % opt['logger']['save_checkpoint_freq'] == 0:
