@@ -14,8 +14,8 @@ datasets:
     dataroot_GT: F:\projects\ai\vhs\vhs_sequences_GT.lmdb
     dataroot_LQ: F:\projects\ai\vhs_sequences_matlabLRx4.lmdb
     use_shuffle: true
-    n_workers: 1  # per GPU
-    batch_size: 16
+    n_workers: 6  # per GPU
+    batch_size: 32
     GT_size: 128
     use_flip: true
     use_rot: true
