@@ -2,7 +2,7 @@ import re
 import sys
 
 metric = '((-)*[0-9]\.[0-9]+e[\-\+][0-9]+)'
-iter_number = r'iter:[ ]*([0-9]+,[0-9]+)'
+iter_number = r' iter:[ ]*([0-9]+[,]*[0-9]+)'
 l_g_pix = ''.join([r'l_g_pix: ', metric])
 l_g_fea = ''.join([r'l_g_fea: ', metric])
 l_g_gan = ''.join([r'l_g_gan: ', metric])
